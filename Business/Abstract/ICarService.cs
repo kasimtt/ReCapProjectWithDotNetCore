@@ -9,6 +9,9 @@ namespace Business.Abstract
     {
         List<Car> GetAll();
         Car GetById(int carId);
+        List<Car> GetByPrince(decimal min, decimal mix);
+        void Added(Car car);
+
         
     }
 }
