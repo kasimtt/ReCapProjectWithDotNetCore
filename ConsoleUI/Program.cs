@@ -3,6 +3,7 @@ using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleUI
 {
@@ -11,12 +12,15 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            Car a = carManager.GetById(1);
-            Console.WriteLine(a.ModelYear);
-            Console.WriteLine(a.CarName);
-            Console.WriteLine(a.CarId);
+            List<Car> cars = carManager.GetByPrince(500,1000);
 
-            
+            foreach (var car in cars )
+            {
+                Console.WriteLine(car.CarName);
+            }
+
+
+            Console.ReadLine();
         }
     }
 }

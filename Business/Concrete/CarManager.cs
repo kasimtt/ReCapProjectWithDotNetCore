@@ -31,7 +31,7 @@ namespace Business.Concrete
             return _carDal.Get(p=>p.CarId == carId);
         }
 
-        public List<Car> GetByPrince(decimal max, decimal min)
+        public List<Car> GetByPrince(decimal min, decimal max)
         {
             return _carDal.GetAll(p => p.DailyPrice <= max && p.DailyPrice >= min);
         }
