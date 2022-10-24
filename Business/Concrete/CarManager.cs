@@ -17,6 +17,10 @@ namespace Business.Concrete
 
         public void Added(Car car)
         {
+            if (car.CarName.Length<2 || car.DailyPrice <=0 )
+            {
+                throw new Exception("hatali giriş yaptınız");
+            }
             _carDal.Added(car);
         }
 
