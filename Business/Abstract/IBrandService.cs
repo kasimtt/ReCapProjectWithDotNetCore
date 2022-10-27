@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Core.DataAccess;
-namespace DataAccess.Abstract
+
+namespace Business.Abstract
 {
-    public interface IColorDal: IEntityRepository<Color>
+    public interface IBrandService
     {
+        List<Brand> getBrandAll();
     }
 }
