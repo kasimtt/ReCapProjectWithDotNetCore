@@ -14,7 +14,17 @@ namespace ConsoleUI
             //CarTest();
             //BrandTest();
 
-            CarTest2();
+            // CarTest2();
+
+            UserManager userManager = new UserManager(new EfUserDal());
+            User user = new User();
+            user.FirstName = "kasim islam";
+            user.LastName = "tatli";
+            user.Password = "43434";
+            user.Email = "kasimislamtatli@gmail.com";
+            
+
+            userManager.Add(user);
 
         }
 
