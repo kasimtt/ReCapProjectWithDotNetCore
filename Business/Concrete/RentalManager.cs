@@ -28,12 +28,12 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedRentalMessage);
         }
 
-        public IDataResult<List<Rental>> getAll()
+        public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());  // mesaj eklemek sana kalmış ama bence gereksiz
         }
 
-        public IDataResult<Rental> getById(int id)
+        public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == id));// mesaj eklemek sana kalmış
         }

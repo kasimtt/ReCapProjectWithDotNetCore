@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -9,16 +10,16 @@ namespace Business.Concrete
 {
     public class BrandManager : IBrandService
     {
-        IBrandDal brandDal;
+        IBrandDal _brandDal;
 
         public BrandManager(IBrandDal brandDal) // secilen herhangi bi veri tabanına göre işlem yapar
         {
-            this.brandDal = brandDal;
+            _brandDal = brandDal;
         }
 
-        public List<Brand> getBrandAll()
+        public IDataResult<List<Brand>> getBrandAll()
         {
-            return brandDal.GetAll();
+            return new SuccessDataResult<List<Brand>>(_brandDal.GetAll());
         }
     }
 }

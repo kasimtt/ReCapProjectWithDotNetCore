@@ -31,7 +31,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.DeletedCustomerMessage);
         }
 
-        public IDataResult<List<Customer>> GetAll(int id)
+        public IDataResult<List<Customer>> GetAll()
         {
            
             return new SuccessDataResult<List<Customer>>(_customerDal.GetAll(),Messages.ListedCustomerMessage);
