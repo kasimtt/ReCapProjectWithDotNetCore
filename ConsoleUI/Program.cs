@@ -5,7 +5,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleUI
+namespace ConsoleUI  // birbiri içinde çağırılmalara çalış.Örneğin her Customer aslında bir User'dir
 {
     class Program
     {
@@ -15,17 +15,21 @@ namespace ConsoleUI
             //BrandTest();
 
             // CarTest2();
+            //UserTest();
 
+        }
+
+        private static void UserTest()
+        {
             UserManager userManager = new UserManager(new EfUserDal());
             User user = new User();
             user.FirstName = "kasim islam";
             user.LastName = "tatli";
             user.Password = "43434";
             user.Email = "kasimislamtatli@gmail.com";
-            
+
 
             userManager.Add(user);
-
         }
 
         private static void CarTest2()
