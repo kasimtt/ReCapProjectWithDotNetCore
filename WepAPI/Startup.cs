@@ -41,7 +41,7 @@ namespace WepAPI
             services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<IUserDal, EfUserDal>();
             services.AddSingleton<IColorDal, EfColorDal>();
-            services.AddSingleton<IUserService, UserManager>();
+            services.AddSingleton<IColorService, ColorManager>();
 
             services.AddCors();
         }

@@ -3,6 +3,7 @@ using Business.Constants;
 using Core.Utilities.Result;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,10 +45,16 @@ namespace Business.Concrete
             return new SuccessDataResult<Customer>(_customerDal.Get(c => c.CustomerId == id), Messages.ElementFound);
         }
 
+        public IDataResult<List<CustomerDetailsDto>> GetCustomerDetails()
+        {
+            return new SuccessDataResult<List<CustomerDetailsDto>>(_customerDal.getCustomerDetails());
+        }
+
         public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);
             return new SuccessResult(Messages.UpgatedCustomerMessage);
         }
+
     }
 }
