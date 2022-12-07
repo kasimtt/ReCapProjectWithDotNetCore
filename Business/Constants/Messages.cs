@@ -21,5 +21,7 @@ namespace Business.Constants
         public static string DeletedRentalMessage = "Araç kiradan kaldırıldı";
         public static string AddedUserMessage = "kullanıcı eklendi";
         public static string DeletedUserMessage= "kullanıcı silindi";
+
+        public static string AddColorMessage = "renk eklendi";
     }
 }
