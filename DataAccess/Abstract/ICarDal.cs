@@ -11,7 +11,7 @@ namespace DataAccess.Abstract
     {
         //GetById, GetAll, Add, Update, Delete
         List<CarDetailsDto> getCarDetails();
-        
-
+        List<CarDetailsDto> getCarDetailsByBrand(int brandId);
+        List<CarDetailsDto> getCarDetailsByColor(int colorId);
     }
 }

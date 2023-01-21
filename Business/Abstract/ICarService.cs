@@ -15,8 +15,10 @@ namespace Business.Abstract
         IDataResult<List<Car>> GetByPrince(decimal min, decimal mix); 
         IResult Added(Car car); 
         IResult Deleted(Car car); 
-        IDataResult<List<CarDetailsDto>> GetCarDetails(); 
-
-        
+        IDataResult<List<CarDetailsDto>> GetCarDetails();
+        IDataResult<List<Car>> GetByBrandId(int brandId);
+        IDataResult<List<CarDetailsDto>> GetCarDetailsByBrandId(int brandId);
+        IDataResult<List<CarDetailsDto>> GetCarDetailsByColor(int colorId);
     }
+
 }
