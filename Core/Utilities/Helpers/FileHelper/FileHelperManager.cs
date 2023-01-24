@@ -1,0 +1,52 @@
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using Core.Utilities.Helpers.GuidHelper;
+namespace Core.Utilities.Helpers.FileHelper
+{
+    public class FileHelperManager : IFileHelperService
+    {
+        
+        public void Delete(string filePath)
+        {
+            if(File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+        }
+
+        public string Update(IFormFile file, string filePath, string root)
+        {
+            if(File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            return Upload(file, root);
+        }
+
+        public string Upload(IFormFile file, string root)
+        {
+           if(file.Length>0)
+            {
+                if(!Directory.Exists(root))  // bakalım resim klasörümüz var mı?
+                {
+                    Directory.CreateDirectory(root); // yoksa yenisi oluştur.
+                }
+
+                string extension = Path.GetExtension(file.FileName);
+                string guid = GuidHelper.GuidHelper.CreateGuid();  // ****namespace'i using yapmama rağman görmedi sonra tekrar dene*****
+                string filePath = guid + extension;
+
+                using (FileStream fileStream = File.Create(root + filePath) )
+                {
+                    file.CopyTo(fileStream);
+                    fileStream.Flush();
+                    return filePath;    
+                }
+            }
+            return null;
+        }
+    }
+}
