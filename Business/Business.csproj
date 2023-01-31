@@ -16,4 +16,8 @@
     <PackageReference Include="FluentValidation" Version="11.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aspects\Autofact\" />
+  </ItemGroup>
+
 </Project>

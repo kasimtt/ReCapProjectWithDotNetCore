@@ -31,7 +31,7 @@ namespace Business.Concrete
             carImage.Date = DateTime.Now;
             // carImage.CarId = carId  --> araba ekleme işleminde uygulanabilir.
             _carImageDal.Added(carImage);
-            return new SuccessResult();
+            return new SuccessResult("resim başarıyla yüklendi");
 
         }
 

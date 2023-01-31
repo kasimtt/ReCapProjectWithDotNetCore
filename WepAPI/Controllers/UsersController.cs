@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Entities.Concrete;
+using Core.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,7 +23,7 @@ namespace WepAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _userService.getAll();
+            var result = _userService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -34,7 +34,7 @@ namespace WepAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _userService.getById(id);
+            var result = _userService.GetById(id);
             if(result.Success)
             {
                 return Ok(result);
