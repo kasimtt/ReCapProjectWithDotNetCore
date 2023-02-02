@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.Aspects.Autofact;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -21,6 +22,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(CarValidator))] 
+       // [SecuredOperation("car.list")] --> veri tabanına eklenicek...
         public IResult Added(Car car)
         {
             _carDal.Added(car);

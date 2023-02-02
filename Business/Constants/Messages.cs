@@ -1,6 +1,8 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -23,5 +25,12 @@ namespace Business.Constants
         public static string DeletedUserMessage= "kullanıcı silindi";
 
         public static string AddColorMessage = "renk eklendi";
+        public static string AuthorizationDenied = "yetkiniz yok";
+        public static string UserRegistered = "kayıt tamamlanmıştır";
+        public static string UserNotFound = "kullanıcı bulunamadı";
+        public static string PasswordError = "şifre hatalı";
+        public static string SuccessfulLogin = "giriş başarılı";
+        public static string UserAlreadyExist = "Kullanıcı zaten kayıtlı";
+        public static string AccessTokenCreate = "token oluşturuldu";
     }
 }

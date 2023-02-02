@@ -14,10 +14,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.1" />
     <PackageReference Include="FluentValidation" Version="11.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Aspects\Autofact\" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

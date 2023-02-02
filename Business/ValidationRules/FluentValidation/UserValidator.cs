@@ -11,7 +11,7 @@ namespace Business.ValidationRules.FluentValidation
         public UserValidator()
         {
             RuleFor(u => u.Email).EmailAddress();
-            RuleFor(u => u.Password).MinimumLength(8);
+           // RuleFor(u => u.Password).MinimumLength(8);
             RuleFor(u => u.FirstName).MinimumLength(2);
         }
     }
