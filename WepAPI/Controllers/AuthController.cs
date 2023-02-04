@@ -35,7 +35,7 @@ namespace WepAPI.Controllers
             return BadRequest(token.Message);
 
         }
-
+        [HttpPost("register")]
         public IActionResult Register(UserForRegister userForRegister)
         {
             var CheckedUser = _authService.UserExists(userForRegister.Email);
@@ -49,7 +49,7 @@ namespace WepAPI.Controllers
                 return BadRequest(RegisteredUser.Message);
             }
 
-            var Token = _authService.Register(userForRegister);
+            var Token = _authService.CreateAccessToken(RegisteredUser.Data);
             if(Token.Success)
             {
                 return Ok(Token.Data);

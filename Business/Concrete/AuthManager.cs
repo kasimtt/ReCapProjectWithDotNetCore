@@ -57,14 +57,14 @@ namespace Business.Concrete
         public IResult UserExists(string email)
         {
            var user =  _userService.GetByEmail(email);
-           if(user!=null)
+           if(user.Data!=null)
             {
-                new ErrorResult(Messages.UserAlreadyExist);
+                return new ErrorResult(Messages.UserAlreadyExist);
             }
             return new SuccessResult();
         }
 
-        public IDataResult<AccessToken> CreateToken(User user )
+        public IDataResult<AccessToken> CreateAccessToken(User user )
         {
             var claims = _userService.GetClaim(user);
             var accessToken = _tokenHelper.CreateAccessToken(user,claims.Data);
