@@ -3,7 +3,7 @@ Kurumsal katmanlı mimari kullanılarak hazırladığım araba kiralama projesid
 
 ## Proje Bilgileri
 * C#, Katmanlı mimari, Entity Framework gibi teknolojiler kullanarak BackEnd geliştirilmiştir.
-* Projede JWT(Jason Web Token), Autofac, fluent validation ,İleri Seviye Result yapısı gibi özellikler de mevcuttur.
+* Projede JWT(Json Web Token), Autofac, fluent validation ,İleri Seviye Result yapısı gibi özellikler de mevcuttur.
 * AOP teknikleri kullanılmıştır.
 * Kurumsal yazılım mimarilerine uygun olarak hazırlanmıştır.
 ***
